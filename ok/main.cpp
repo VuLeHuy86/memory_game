@@ -17,20 +17,17 @@ int main (int argc, char* argv[]) {
 
     setupMenuButtons(playButton, introButton, backButton, menuBackground, textHelp, renderer);
 
-    hihi(renderer, window, background, state);
+    mainloop(renderer, window, background, state);
 
     close(window, renderer, menuBackground);
 
     cout << "ban da ket thuc phan 1 voi tong so luot lat the la: " << count << endl;
     ready();
 
-    //KẾT THỨC PHẦN 1 PHẢI TRẢ VỀ 1 SỐ ĐỂ TRUYỀN VÀO HÀM startPART2 ở dưới để nhận gợi ý
-
     // vector chứa các svien + thông tin( ban đầu rỗng)
     vector<sv> v;
 
-    // hàm khởi tạo p2
-    khoitaoPart2(v);
+    createPart2(v);
     ready();
 
     // hàm bắt đầu chơi và đưa ra gợi ý dựa trên số lượt gợi ý mà người chơi nhận được sau khi kết thúc p1, ở đây giả sử người chơi có 3 lượt
@@ -53,12 +50,10 @@ int main (int argc, char* argv[]) {
 
     // vòng lặp chính của game, in ra câu hỏi, người chơi nhập vào, kiểm tra kết quả, cập nhật điểm tích lũy
     for (int i = 0; i < vv.size(); i ++) {
-        inracauhoi(arr[vv[i] - 1]);
-        xoamanhinh();
+        printQuestion(arr[vv[i] - 1]);
+        deleteScreen();
         int x = vv.size() - 1;
-
         checkkk(i, vv[i], x, v); // chỉ số i hiện tại, số của vv[i], vv.size() - 1, vector v
-
     }
 
     // kết thúc trò chơi và giải phóng vùng nhớ được cấp phát động để lưu câu hỏi

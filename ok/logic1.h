@@ -1,5 +1,6 @@
 #ifndef LOGIC1_H
 #define LOGIC1_H
+
 #include "sinhvien.h"
 #include <SDL.h>
 #include <vector>
@@ -11,10 +12,16 @@ using namespace std;
 // PHẦN 1
 // truyền tham chiếu của con trỏ để thay đổi con trỏ
 vector<Card> createShuffledCards(SDL_Renderer* renderer);
+
 void calculateCardPositions(vector<Card> &cards);
+
 void handleMouseClick(vector<Card>& cards, int mouseX, int mouseY, int &x);// hàm xử lí sự kiện
+
 void handleCardFlipBack(vector<Card> &cards);
+
 bool checkWin(const vector<Card> &cards);
+
+
 
 
 
@@ -47,13 +54,13 @@ void topline();
 void botline();
 // hàm in ra dòng dưới của bảng
 
-void modify(string s, int x);
+void adjust(string s, int x);
 // hàm điều chỉnh độ rộng của bảng cho cân đối
 
 void print(const vector<sv>& v, const vector<sv>& vv);
 // tham số là 2 vector lưu ds thông tin svien, 1 cái là gốc để làm chuẩn, 1 cái cần ra ds sau khi sx
 
-void khoitaoPart2(vector<sv>& v);
+void createPart2(vector<sv>& v);
 // hàm khởi tạo p2
 
 void startPart2(int x, const vector<sv>& v);
@@ -62,7 +69,7 @@ void startPart2(int x, const vector<sv>& v);
 void ready ();
 // hàm sẵn sàng
 
-void xoamanhinh();
+void deleteScreen();
 // hàm xóa màn hình
 
 
@@ -77,16 +84,16 @@ string chuanhoa(const string& s);
 string chuanhoa2(const string& s);
 //hàm chuẩn hóa để trả về tên svien sau khi đã thực hiện so sánh xong (đưa tên trở về vị trí cũ sau họ, đên đệm)
 
-bool doixung(string s);
+bool reversed(string s);
 // hàm check xâu kí tự đối xứng
 
 vector<int> listRandomnumber(int a, int b);
 // hàm random trả về là a số trong khoảng từ 1 đến b (mỗi số tương ứng với 1 câu hỏi)
 
-vector<sv> sapxep(int x, const vector<sv>& v);
+vector<sv> sortby(int x, const vector<sv>& v);
 // hàm trả về 1 danh sách mới sau khi đã được sắp xếp theo tiêu chí nào đó (gợi ý)
 
-void inracauhoi (string s);
+void printQuestion (string s);
 // hàm in ra 1 câu hỏi lên mh
 
 string ans (int x, const vector<sv>& v);

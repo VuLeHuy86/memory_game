@@ -10,9 +10,6 @@
 
 using namespace std;
 
-const int SCREEN_WIDTH = 1000;
-const int SCREEN_HEIGHT = 700;
-
 // PHẦN 1
 
 vector<Card> createShuffledCards(SDL_Renderer* renderer) {
@@ -294,7 +291,7 @@ string checkoldest(const vector<sv>& v) {
 
 string checkreverseid(const vector<sv>& v) {
     for (int i = 0; i < v.size(); i ++) {
-        if (doixung(v[i].getMsv())) {
+        if (reversed(v[i].getMsv())) {
             return v[i].getTen();
         }
     }
@@ -404,7 +401,7 @@ void botline() {
     cout << endl << endl;
 }
 
-void modify(string s, int x) {
+void adjust(string s, int x) {
     int a = x - s.size();
     for (int i = 1; i <= a; i ++) {
         cout << " ";
@@ -429,12 +426,12 @@ void print(const vector<sv>& v, const vector<sv>& vv) {
 
     for (int i = 0; i < vv.size(); i ++) {
         cout << vv[i].getTen();
-        modify(vv[i].getTen(), max);
+        adjust(vv[i].getTen(), max);
         cout << " | " << vv[i].getNgaysinh() << " | " << vv[i].getMsv() << " | " << vv[i].getLop() << " | " << fixed << setprecision(2) << vv[i].getGpa() << " |" << endl;
     }
 }
 
-void khoitaoPart2(vector<sv>& v) {
+void createPart2(vector<sv>& v) {
     ifstream file("thongtin_sinhvien.txt");
     string temp;
     while(getline(file, temp)) {
@@ -487,7 +484,7 @@ void startPart2(int x, const vector<sv>& v) {
         }
 
         topline();
-        print(v, sapxep(x, v));
+        print(v, sortby(x, v));
         botline();
 
         }
@@ -507,7 +504,7 @@ void ready () {
     cout << endl;
 }
 
-void xoamanhinh() {
+void deleteScreen() {
     for (int i = 0; i <= 26; i ++) {
         cout << endl;
     }
@@ -553,7 +550,7 @@ string chuanhoa2(const string& s) {
     return temp;
 }
 
-bool doixung(string s) {
+bool reversed(string s) {
     int left = 0, right = s.size() - 1;
     while (left <= right) {
         if(s[left] != s[right]) {
@@ -578,7 +575,7 @@ vector<int> listRandomnumber(int a, int b) {
     return ve;
 }
 
-vector<sv> sapxep(int x, const vector<sv>& v) {
+vector<sv> sortby(int x, const vector<sv>& v) {
     switch(x) {
         case 1:
             return alphabet(v);
@@ -597,7 +594,7 @@ vector<sv> sapxep(int x, const vector<sv>& v) {
     }
 }
 
-void inracauhoi (string s) {
+void printQuestion (string s) {
     cout << s;
 }
 

@@ -6,6 +6,9 @@
 #include "Card.h"
 #include "button.h"
 
+extern const int SCREEN_WIDTH;
+extern const int SCREEN_HEIGHT;
+
 bool init(SDL_Window* &window, SDL_Renderer* &renderer);// truyền tham chiếu của con trỏ để thay đổi con trỏ
 
 SDL_Texture* LoadTexture(const char* c, SDL_Renderer* renderer);// hàm load texture từ file

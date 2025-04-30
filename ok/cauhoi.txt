@@ -1,0 +1,11 @@
+Ho ten cua sinh vien co gpa cao nhat?
+Ho ten cua sinh vien co gpa thap nhat?
+Ho ten cua sinh vien co tuoi cao nhat?
+Ho ten cua sinh vien co tuoi thap nhat?
+Ten lop cua sinh vien co gpa cao nhat?
+Ho ten cua sinh vien co msv la 1 xau thuan nghich?
+Neu sap xep danh sach lop theo alphabet, sinh vien nao dung dau tien?
+Neu sap xep danh sach lop theo alphabet, sinh vien nao dung cuoi cung?
+Co bao nhieu sinh vien du dieu kien xet hoc bong?
+Co bao nhieu sinh vien khong du dieu kien tot nghiep?
+

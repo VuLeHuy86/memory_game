@@ -13,19 +13,19 @@ using namespace std;
 // truyền tham chiếu của con trỏ để thay đổi con trỏ
 vector<Card> createShuffledCards(SDL_Renderer* renderer);
 
-void calculateCardPositions(vector<Card> &cards);
+void calculateCardPositions(vector<Card> &cards);// tính toán vị trí của các thẻ để render ra mh
 
 void handleMouseClick(vector<Card>& cards, int mouseX, int mouseY, int &x);// hàm xử lí sự kiện
 
-void handleCardFlipBack(vector<Card> &cards);
+void handleCardFlipBack(vector<Card> &cards);// xử lí lật thẻ
 
-bool checkWin(const vector<Card> &cards);
-
-
+bool checkWin(const vector<Card> &cards);// kiểm tra điều kiện thắng
 
 
 
-// PHẦN 2
+
+
+// PHẦN 2: Các hàm sắp xếp và tìm kiếm trả về
 vector<sv> sortgpa(const vector<sv>& v);
 vector<sv> sortage(const vector<sv>& v);
 vector<sv> sortmsv(const vector<sv>& v);
@@ -99,10 +99,12 @@ void printQuestion (string s);
 string ans (int x, const vector<sv>& v);
 // hàm đối chiếu đáp án người chơi nhập vào với kết quả của chương trình
 
-bool check_update(string a, string b);
+bool check(string a, string b);
 // hàm kiểm tra đáp án người chơi nhập vào để cập nhật
 
-void checkkk(int i, int x, int y, const vector<sv> &v);
+void check_update(int i, int x, int y, const vector<sv> &v);
+// kiểm tra và cập nhật current point
+
 
 #endif // LOGIC1_H
 

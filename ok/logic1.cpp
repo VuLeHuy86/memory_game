@@ -8,6 +8,8 @@
 #include <iomanip>
 #include "graphic.h"
 
+int POINT = 0;
+
 using namespace std;
 
 // PHẦN 1
@@ -631,21 +633,20 @@ string ans (int x, const vector<sv>& v) {
     }
 }
 
-bool check_update(string a, string b) {
+bool check(string a, string b) {
     if (a == b) {
         return 1;
     }
     else return 0;
 }
 
-int POINT = 0;
-void checkkk(int i, int x, int y, const vector<sv> &v) {
+void check_update(int i, int x, int y, const vector<sv> &v) {
 	string s;
 	getline(cin, s);
 	string temp = ans(x, v);
 
 	if (i < y) {
-		if (check_update(s, temp)) {
+		if (check(s, temp)) {
 			cout << "Correct!" << endl;
             POINT += 20;
             cout << "----- Your current point is: " << POINT << " -----" << endl;
@@ -656,7 +657,7 @@ void checkkk(int i, int x, int y, const vector<sv> &v) {
     	}
 	}
 	else {
-		if (check_update(s, temp)) {
+		if (check(s, temp)) {
 			cout << "Correct!" << endl;
             	POINT += 20;
             	cout << "----- Your final point is: " << POINT << " -----" << endl;

@@ -53,7 +53,7 @@ int main (int argc, char* argv[]) {
         printQuestion(arr[vv[i] - 1]);
         deleteScreen();
         int x = vv.size() - 1;
-        checkkk(i, vv[i], x, v); // chỉ số i hiện tại, số của vv[i], vv.size() - 1, vector v
+        check_update(i, vv[i], x, v); // chỉ số i hiện tại, số của vv[i], vv.size() - 1, vector v
     }
 
     // kết thúc trò chơi và giải phóng vùng nhớ được cấp phát động để lưu câu hỏi

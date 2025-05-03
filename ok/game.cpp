@@ -14,7 +14,7 @@ SDL_Texture* textHelp = nullptr;
 GameState state = MENU;
 
 void gamePlay(SDL_Renderer* renderer, SDL_Window* window, SDL_Texture* background) {
-// Tạo các thẻ (cards)
+    // Tạo các thẻ (cards)
     vector<Card> cards = createShuffledCards(renderer);
 
     // Tính toán vị trí các thẻ
@@ -58,7 +58,7 @@ void gamePlay(SDL_Renderer* renderer, SDL_Window* window, SDL_Texture* backgroun
             quit = true;  // Thoát game sau khi chiến thắng
         }
     }
-    // Dọn dẹp tài nguyên
+
     close(window, renderer, background);
 }
 

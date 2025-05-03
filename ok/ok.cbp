@@ -44,6 +44,7 @@
 		<Unit filename="Card.h" />
 		<Unit filename="button.cpp" />
 		<Unit filename="button.h" />
+		<Unit filename="game.cpp" />
 		<Unit filename="game.h" />
 		<Unit filename="graphic.cpp" />
 		<Unit filename="graphic.h" />

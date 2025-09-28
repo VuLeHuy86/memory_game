@@ -10,7 +10,7 @@
 using namespace std;
 
 // PHẦN 1
-// truyền tham chiếu của con trỏ để thay đổi con trỏ
+
 vector<Card> createShuffledCards(SDL_Renderer* renderer);
 
 void calculateCardPositions(vector<Card> &cards);// tính toán vị trí của các thẻ để render ra mh
@@ -77,6 +77,7 @@ void deleteScreen();
 // HÀM HỖ TRỢ VỀ LOGIC CHO PHẦN 2
 
 int numofsuggest(int x);
+// hàm trả về số lượng gợi ý mà người chơi sẽ nhận được cho phần 2 dựa vào kết quả chơi ở phần 1
 
 string chuanhoa(const string& s);
 // hàm chuẩn hóa để đưa tên svien lên trước họ và tên đệm sau đó thực hiện so sánh xâu kí tự

@@ -112,7 +112,7 @@ void mainloop(SDL_Renderer* renderer, SDL_Window* window, SDL_Texture* backgroun
         } else if (state == PLAYING) {
             gamePlay(renderer, window, background);
             quit = true;
-             // Sau khi chơi xong quay lại menu
+            // Sau khi chơi xong bdau phần 2
         }
 
         SDL_RenderPresent(renderer);

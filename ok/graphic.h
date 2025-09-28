@@ -13,7 +13,7 @@ bool init(SDL_Window* &window, SDL_Renderer* &renderer);// truyền tham chiếu
 
 SDL_Texture* LoadTexture(const char* c, SDL_Renderer* renderer);// hàm load texture từ file
 
-void render(SDL_Renderer* renderer, const vector<Card> &cards);// hàm render các thẻ lên mh và background
+void render(SDL_Renderer* renderer, const vector<Card> &cards);// hàm render các thẻ lên mh
 
 void close(SDL_Window* window, SDL_Renderer *renderer, SDL_Texture* backTexture);// dọn dẹp tài nguyên
 

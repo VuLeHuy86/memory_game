@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1745993240 source:d:\memory_game\ok\main.cpp
+1746786592 source:d:\memory_game\ok\main.cpp
 	<iostream>
 	<fstream>
 	<SDL.h>
@@ -484,7 +484,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1745686525 source:d:\memory_game\ok\logic1.cpp
+1746809833 source:d:\memory_game\ok\logic1.cpp
 	"logic1.h"
 	<SDL_image.h>
 	<algorithm>
@@ -495,7 +495,7 @@
 	<iomanip>
 	"graphic.h"
 
-1745993209 d:\memory_game\ok\logic1.h
+1746805659 d:\memory_game\ok\logic1.h
 	"sinhvien.h"
 	<SDL.h>
 	<vector>
@@ -520,17 +520,17 @@
 1745686544 d:\memory_game\ok\button.h
 	<SDL.h>
 
-1745686530 source:d:\memory_game\ok\graphic.cpp
+1746812070 source:d:\memory_game\ok\graphic.cpp
 	"graphic.h"
 	<SDL_image.h>
 
-1746253922 d:\memory_game\ok\graphic.h
+1746812070 d:\memory_game\ok\graphic.h
 	<SDL.h>
 	<vector>
 	"Card.h"
 	"button.h"
 
-1745992397 source:d:\memory_game\ok\game.cpp
+1746812171 source:d:\memory_game\ok\game.cpp
 	"game.h"
 	"logic1.h"
 	"graphic.h"

@@ -10,6 +10,11 @@
 
 int POINT = 0;
 
+Card* firstFlippedCard = nullptr;
+bool waitingToFlipBack = false;
+Uint32 flipBackStartTime = 0;
+int COUNT = 0;
+
 using namespace std;
 
 // PHẦN 1
@@ -75,13 +80,6 @@ void calculateCardPositions(vector<Card> &cards) {
     }
 }
 
-
-
-Card* firstFlippedCard = nullptr;
-bool waitingToFlipBack = false;
-Uint32 flipBackStartTime = 0;
-int COUNT = 0;
-
 void handleMouseClick(vector<Card>& cards, int mouseX, int mouseY, int &x) {
     if (waitingToFlipBack) return; // Đang chờ lật lại, không xử lý click
 
@@ -94,7 +92,7 @@ void handleMouseClick(vector<Card>& cards, int mouseX, int mouseY, int &x) {
     }
 
     // Nếu đã lật đủ 2 thẻ, không làm gì thêm
-    if (flippedCount >= 2) return;
+    if (flippedCount == 2) return;
 
     // Dành cho trường hợp chưa lật được thẻ nào, hoặc lật thẻ thứ 2
     for (Card& card : cards) {
@@ -111,6 +109,7 @@ void handleMouseClick(vector<Card>& cards, int mouseX, int mouseY, int &x) {
                     firstFlippedCard = &card;
                     x ++;
                 }
+
                 // Nếu là thẻ thứ 2 được lật
                 else {
                     if (firstFlippedCard->getId() == card.getId()) {
@@ -131,7 +130,7 @@ void handleMouseClick(vector<Card>& cards, int mouseX, int mouseY, int &x) {
 }
 
 void handleCardFlipBack(vector<Card>& cards) {
-    if (waitingToFlipBack && SDL_GetTicks() - flipBackStartTime >= 1000) {
+    if (waitingToFlipBack && (SDL_GetTicks() - flipBackStartTime >= 1000))  {
         for (auto& card : cards) {
             if (card.getCheck() && !card.getMatched()) {
                 card.setCheck(false);
@@ -450,6 +449,25 @@ void createPart2(vector<sv>& v) {
     cout << "*LUU Y: khi nhap cau tra loi phai nhap day du ca ho va ten cua sinh vien" << endl;
 }
 
+vector<sv> sortby(int x, const vector<sv>& v) {
+    switch(x) {
+        case 1:
+            return alphabet(v);
+        case 2:
+            return sortgpa(v);
+        case 3:
+            return sortage(v);
+        case 4:
+            return sortmsv(v);
+        case 5:
+            return sortlop(v);
+        case 6:
+            return scholarship(v);
+        case 7:
+            return notgraduate(v);
+    }
+}
+
 void startPart2(int x, const vector<sv>& v) {
     // 1 set lưu x số khác nhau tương ứng với x gợi ý khác nhau random (số hóa mỗi gợi ý rồi random lưu vào 1 set)
     set<int> se;
@@ -575,25 +593,6 @@ vector<int> listRandomnumber(int a, int b) {
         ve.push_back(x);
     }
     return ve;
-}
-
-vector<sv> sortby(int x, const vector<sv>& v) {
-    switch(x) {
-        case 1:
-            return alphabet(v);
-        case 2:
-            return sortgpa(v);
-        case 3:
-            return sortage(v);
-        case 4:
-            return sortmsv(v);
-        case 5:
-            return sortlop(v);
-        case 6:
-            return scholarship(v);
-        case 7:
-            return notgraduate(v);
-    }
 }
 
 void printQuestion (string s) {

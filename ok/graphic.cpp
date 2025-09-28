@@ -68,7 +68,7 @@ void setupMenuButtons (Button& playButton, Button& introButton, Button& backButt
 
 void renderButton(SDL_Renderer* renderer, const Button& temp) {
     SDL_Rect rect = temp.getRect();
-    SDL_RenderCopy(renderer, temp.getTexture(), nullptr, &rect); // &temp.getRect() sai
+    SDL_RenderCopy(renderer, temp.getTexture(), nullptr, &rect);
 }
 
 
